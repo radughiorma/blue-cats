@@ -7,6 +7,13 @@ autor: radug
     <template>
         <style>
         </style>
+        <firebase-auth
+            id="auth"
+            user="{{user}}"
+            status-known="{{statusKnown"}}
+            provider="google">
+
+        </firebase-auth>
     </template>
     
     <script>
@@ -15,7 +22,9 @@ autor: radug
             is: 'blue-cats-auth',
             
         });
-        
+
+
+
     </script>
     
 </dom-module>

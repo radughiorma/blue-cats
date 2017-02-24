@@ -1,5 +1,32 @@
-<link rel="import" href="blue-cats-event-planner.html">
 
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="import" href="blue-cats-event-planner.html">
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAoh2kZvVKT4RSDPhnqxrtZSEiMoqSyqOc",
+            authDomain: "blue-cats.firebaseapp.com",
+            databaseURL: "https://blue-cats.firebaseio.com",
+            storageBucket: "blue-cats.appspot.com",
+            messagingSenderId: "768540659665"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+<body>
 <blue-cats-event-planner>
 
 </blue-cats-event-planner>
+</body>
+</html>

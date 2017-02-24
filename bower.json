@@ -15,8 +15,9 @@
     "test",
     "tests"
   ],
-
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "firebase-element": "GoogleWebComponents/firebase-element#^1.0.16",
+    "paper-date-picker": "bendavis78/paper-date-picker#^1.2.0"
   }
 }
