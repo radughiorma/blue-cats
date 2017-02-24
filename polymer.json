@@ -2,14 +2,12 @@
   "entrypoint": "blue-cats-event-planner.html",
   "shell": "blue-cats-event-planner.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view404.html"
+    
   ],
   "sourceGlobs": [
     "/**/*",
     "resources/**/*",
+    "images/**/*",
     "bower.json"
   ],
   "includeDependencies": [
