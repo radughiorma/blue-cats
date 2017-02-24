@@ -1,0 +1,19 @@
+{
+  "name": "blue-cats",
+  "version": "1.0.0",
+  "description": "Project of 'Blue Cats' team for the PolyHack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radu007/blue-cats.git"
+  },
+  "author": "Radu Ghiorma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radu007/blue-cats/issues"
+  },
+  "homepage": "https://github.com/radu007/blue-cats#readme"
+}
