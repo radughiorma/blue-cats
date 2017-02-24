@@ -1,0 +1,22 @@
+{
+  "name": "blue-cats",
+  "description": "Project of 'Blue Cats' team for the PolyHack",
+  "main": "index.html",
+  "authors": [
+    "Radu Ghiorma"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/radu007/blue-cats",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
