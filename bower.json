@@ -21,7 +21,8 @@
     "polymerfire": "firebase/polymerfire#^0.10.3",
     "paper-date-picker": "bendavis78/paper-date-picker#^1.2.0",
     "paper-button": "PolymerElements/paper-button#^1.0.14",
-    "paper-dialog": "PolymerElements/paper-dialog#^1.1.0"
+    "paper-dialog": "PolymerElements/paper-dialog#^1.1.0",
+    "paper-card": "PolymerElements/paper-card#^1.1.4"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
