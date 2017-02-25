@@ -48,6 +48,16 @@
                 color: black;
                 font-weight: bold;
             }
+			
+			.catImg{
+			width: 70px;
+			height: 80px;
+			}
+			
+			. headerText{
+				font-size: 30px;
+				font-family: Georgia;
+			}
         </style>
 
         <app-location route="{{route}}"></app-location>
@@ -78,7 +88,9 @@
                 <app-header condenses reveals effects="waterfall">
                     <app-toolbar>
                         <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+						<div > <img class="catImg"  src="\images\manifest\cat1-420x420.png"/> </div>
                         <div main-title>Blue Cats Events</div>
+						
                     </app-toolbar>
                 </app-header>
 
