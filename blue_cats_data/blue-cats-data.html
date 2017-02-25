@@ -33,10 +33,13 @@
                 console.log("event: " + _event + " date: " + _date);
                 var newEventRef = this.fbApp.database().ref("events").push();
                 newEventRef.set({
-                        "event" : _event,
-                    "date"  : _date
+                        "name" : _event,
+                        "description"  : _date
                     });
 
+            },
+            _getEvents: function(){
+              this.fbApp.database().ref("events");
             },
             _add: function (value) {
                 console.log(value);

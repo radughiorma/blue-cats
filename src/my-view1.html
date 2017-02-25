@@ -20,17 +20,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 10px;
       }
     </style>
-    <firebase-auth id="auth" user="{{user}}" provider="google" on-error="showError"></firebase-auth>
     <div class="card">
       <div class="circle">1</div>
-      <h1>View One [[user.displayName]]</h1>
+      <h1>View One</h1>
       <div hidden$="[[user]]">
-        <table>
-          <tr><th>uid</th> <td>[[user.uid]]</td></tr>
-          <tr><th>displayName</th> <td>[[user.displayName]]</td></tr>
-          <tr><th>email</th> <td>[[user.email]]</td></tr>
-          <tr><th>emailVerified</th> <td>[[user.emailVerified]]</td></tr>
-        </table>
 
         <button on-tap="signOut">Sign Out</button>
       </div>
