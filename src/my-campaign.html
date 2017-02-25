@@ -1,6 +1,3 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
@@ -9,39 +6,72 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="shared-styles.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/paper-rating/paper-rating.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
+
 <dom-module id="my-campaign">
   <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
 
-        padding: 10px;
-      }
-    </style>
+	 <style include="shared-styles">
+		.eventListText{
+			padding 50px;
+			margin-left: 50x;
+			color: grey;
+		}
+		.eventItem{
+			display.inline;
+			width:  300px;
+			margin 50px;
+		}
+		.stars{
+			display.inline;
+			width:  300px;
+			margin 50px;
+		}
+		.eventList{
+			display.inline;
+			margin 50px;
+		}
+	</style>
     <firebase-auth id="auth" user="{{user}}" provider="google" on-error="showError"></firebase-auth>
-    <div class="card">
-      <div class="circle">1</div>
-      <h1>View One [[user.displayName]]</h1>
-      <div hidden$="[[user]]">
-        <table>
-          <tr><th>uid</th> <td>[[user.uid]]</td></tr>
-          <tr><th>displayName</th> <td>[[user.displayName]]</td></tr>
-          <tr><th>email</th> <td>[[user.email]]</td></tr>
-          <tr><th>emailVerified</th> <td>[[user.emailVerified]]</td></tr>
-        </table>
-
-        <button on-tap="signOut">Sign Out</button>
-      </div>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </div>
+   <paper-card alt="Donuts">
+		<div  class="eventListText" style="padding:5px  5px 5px 20px">
+			<h2>Event list</h2>
+		</div>
+		<div class="eventList" style="padding:5px  5px 5px 20px">
+			
+		  <div class="eventItem">
+			Town hall 
+		  </div>
+		  <div class="stars">
+		  <paper-rating  rating="0"  style="padding:5px  0px 20px 0px"></paper-rating>
+		  </div>
+		  <div style="height: 20px"></div>
+		  <div class="eventItem">
+			It Polymer Training
+		  </div>
+		  <div class="stars">
+		  <paper-rating  rating="0"  style="padding:5px  0px 20px 0px"></paper-rating>
+		  </div>
+		   <div style="height: 20px"></div>
+		   <div class="eventItem">
+			It Forum
+		  </div>
+		  <div class="stars">
+		  <paper-rating  rating="0"  style="padding:5px  0px 20px 0px"></paper-rating>
+		  </div>
+	</paper-card>
   </template>
 
   <script>
+ 
+
+	
     Polymer({
       is: 'my-campaign',
     });
   </script>
 </dom-module>
+
