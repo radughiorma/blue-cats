@@ -1,29 +1,26 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
 <link rel="import" href="bower_components/paper-date-picker/paper-date-picker.html">
+<link rel="import" href="bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="blue-cats-auth.html">
 <!--
  
 autor: radug
 -->
 <dom-module id="blue-cats-event-planner">
     <template>
-        <style>
-        </style>
-
-        <paper-date-picker></paper-date-picker>
-
-
-        <h1>Welcome blue cats</h1>
-
-
+        <firebase-app auth-domain="blue-cats.firebaseapp.com"
+                      database-url="https://blue-cats.firebaseio.com/"
+                      api-key="AIzaSyAoh2kZvVKT4RSDPhnqxrtZSEiMoqSyqOc"></firebase-app>
+        <blue-cats-auth></blue-cats-auth>
     </template>
     <script>
         Polymer({
-        
+
             is: 'blue-cats-event-planner',
-            
+
         });
-        
+
     </script>
-    
+
 </dom-module>
