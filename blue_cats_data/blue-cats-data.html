@@ -4,13 +4,24 @@
 
 <dom-module id="blue-cats-data">
     <template>
-        <firebase-auth user="{{user}}"></firebase-auth>
 
     </template>
     <script>
         Polymer({
             id: "blue-cats-data",
             properties: {
+                fbApp : {
+                    type : Object,
+                    value : function () {
+
+                        return firebase.initializeApp(
+                            {
+                                authDomain : "blue-cats.firebaseapp.com",
+                                databaseURL: "https://blue-cats.firebaseio.com/",
+                                apiKey : "AIzaSyAoh2kZvVKT4RSDPhnqxrtZSEiMoqSyqOc"
+                            }, "blue-cats-data-app")
+                    }
+                }
             },
 
             ready: function () {
@@ -20,16 +31,17 @@
             _addEvent: function (_event, _date) {
 
                 console.log("event: " + _event + " date: " + _date);
-                var newEventRef = firebase.database().ref("events").push();
+                var newEventRef = this.fbApp.database().ref("events").push();
                 newEventRef.set({
-                    "event" : _event,
+                        "event" : _event,
                     "date"  : _date
-                });
+                    });
 
             },
             _add: function (value) {
                 console.log(value);
             }
+
 
         })
     </script>
