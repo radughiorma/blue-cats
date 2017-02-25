@@ -1,3 +1,6 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
@@ -8,7 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
-<dom-module id="my-events">
+<dom-module id="my-campaign">
   <template>
     <style include="shared-styles">
       :host {
@@ -19,7 +22,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
     <firebase-auth id="auth" user="{{user}}" provider="google" on-error="showError"></firebase-auth>
     <div class="card">
-      
+      <div class="circle">1</div>
+      <h1>View One [[user.displayName]]</h1>
+      <div hidden$="[[user]]">
+        <table>
+          <tr><th>uid</th> <td>[[user.uid]]</td></tr>
+          <tr><th>displayName</th> <td>[[user.displayName]]</td></tr>
+          <tr><th>email</th> <td>[[user.email]]</td></tr>
+          <tr><th>emailVerified</th> <td>[[user.emailVerified]]</td></tr>
+        </table>
+
+        <button on-tap="signOut">Sign Out</button>
+      </div>
       <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
       <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
     </div>
@@ -27,8 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     Polymer({
-      is: 'my-events',
+      is: 'my-campaign',
     });
   </script>
 </dom-module>
-
