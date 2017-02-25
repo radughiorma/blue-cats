@@ -23,7 +23,6 @@
     "paper-button": "PolymerElements/paper-button#^1.0.14",
     "paper-dialog": "PolymerElements/paper-dialog#^1.1.0",
     "paper-input": "PolymerElements/paper-input#^1.1.23",
-    "paper-textarea": "PolymerElements/paper-textarea#^1.1.23",
     "paper-card": "PolymerElements/paper-card#^1.1.4"
   },
   "devDependencies": {
