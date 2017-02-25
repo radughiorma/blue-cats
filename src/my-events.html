@@ -6,45 +6,134 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
-<link rel="import" href="../bower_components/iron-a11y-keys-behavior/iron-a11y-keys-behavior.html">
+<link rel="import" href="../bower_components/app-layout/app-grid/demo/md-grid-layout.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
 <dom-module id="my-events">
   <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
+      <style include="app-grid-style">
 
-        padding: 10px;
-      }
-	  .imgEvent{
-	  widt: 100px;
-	  height: 150px;
-	  }
-	  .stars {
-		width:  50px;
-		height:  50px;
-		color:  #888888;
-		
-	  }
-    </style>
-    <firebase-auth id="auth" user="{{user}}" provider="google" on-error="showError"></firebase-auth>
-    <div class="card">
-      
-      <h3> Event Name</h3> <h3> 29.03.2017</h3>
-	  <star-ratings class="stars" value="4"></star-ratings>
-	  <div><img src="\images\afis.jpg"/></div>
-      <p>Ut vitae scelerisque lectus. Mauris non rhoncus dolor, sed facilisis arcu. Etiam dictum risus at nisl accumsan maximus. Morbi vel ullamcorper ex. Proin viverra pellentesque ligula sit amet commodo. Integer nec elit vehicula, mattis erat a, molestie justo.
-	  Morbi sed purus massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-	  
-    </div>
+          :host {
+              display: block;
+              --app-grid-columns: 4;
+              --app-grid-gutter: 10px;
+              --app-grid-expandible-item-columns: 4;
+              --paper-icon-button-ink-color: white;
+          }
+
+          app-header {
+              background-color: #0b8043;
+              color: white;
+          }
+
+          ul {
+              padding: 0;
+              list-style: none;
+          }
+
+          .centered-container {
+              margin-top: 40px;
+              max-width: 1000px;
+              margin: 40px auto;
+          }
+
+          .item {
+              height: 250px;
+              position: relative;
+              background-color: white;
+              background-size: cover;
+              background-position: center center;
+          }
+
+          .item:nth-child(5n + 1) {
+              height: 30vmax;
+              @apply(--app-grid-expandible-item);
+          }
+
+          .item-title {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background-color: rgba(0, 0, 0, 0.2);
+              color: white;
+              font-weight: 400;
+              padding: 16px;
+          }
+
+          @media(max-width: 799px) {
+
+              .centered-container {
+                  margin: 10px 5px;
+              }
+
+              :host {
+                  --app-grid-columns: 2;
+                  --app-grid-gutter: 5px;
+                  --app-grid-item-height: 200px;
+              }
+
+          }
+          .imgEvent{
+              widt: 100px;
+              height: 150px;
+          }
+          .stars {
+              width:  50px;
+              height:  50px;
+              color:  #888888;
+
+          }
+      </style>
+      <firebase-auth user="{{user}}"></firebase-auth>
+      <firebase-query
+              id="query"
+              app-name="blue-cats-data-app"
+              path="events"
+              data="{{mycatevents}}">
+      </firebase-query>
+
+      <app-header-layout>
+<!--          <app-header condenses reveals effects="waterfall">
+              <app-toolbar>
+                  <div spacer main-title>Material responsive grid</div>
+              </app-toolbar>
+          </app-header>-->
+          <div class="centered-container">
+              <ul class="app-grid">
+                  <template is="dom-repeat" items="[[mycatevents]]"  as="catevent">
+                      <li class="item" style="background-image: url(//lorempixel.com/800/800/nature/?i=[[index]]);">
+                          <div class="item-title"><b>[[catevent.name]]</b> [[catevent.description]]</div>
+                      </li>
+                  </template>
+              </ul>
+          </div>
+      </app-header-layout>
+
+      <template is="dom-repeat" items="{{mycatevents}}" as="catevent">
+          <span><h1>[[catevent.event]]</h1>[[catevent.date]]</span>
+
+      </template>
+
   </template>
-
   <script>
     Polymer({
       is: 'my-events',
+        properties: {
+            uid: String,
+            mycatevents: {
+                type: Object
+            }
+        }
     });
   </script>
 </dom-module>
