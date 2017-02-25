@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html"/>
+<link rel="import" href="../bower_components/polymerfire/firebase-query.html"/>
+
+<dom-module id="blue-cats-data">
+    <template>
+        <firebase-auth user="{{user}}"></firebase-auth>
+
+    </template>
+    <script>
+        Polymer({
+            id: "blue-cats-data",
+            properties: {
+            },
+
+            ready: function () {
+                console.log("blue-cats-data ready");
+            },
+
+            _addEvent: function (_event, _date) {
+
+                console.log("event: " + _event + " date: " + _date);
+                var newEventRef = firebase.database().ref("events").push();
+                newEventRef.set({
+                    "event" : _event,
+                    "date"  : _date
+                });
+
+            },
+            _add: function (value) {
+                console.log(value);
+            }
+
+        })
+    </script>
+</dom-module>

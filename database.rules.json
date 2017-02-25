@@ -5,12 +5,11 @@
         ".read": "$uid === auth.uid",
         ".write": "$uid === auth.uid"
       }
+    },
+
+    "events": {
+      ".read" : true,
+      ".write" : true
     }
-  },
-
-  "events": {
-
   }
 }
-
-

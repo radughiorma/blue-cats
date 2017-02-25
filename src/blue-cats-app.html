@@ -12,6 +12,7 @@
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="my-icons.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
 
 
 <dom-module id="blue-cats-app">
@@ -49,6 +50,11 @@
                 font-weight: bold;
             }
         </style>
+
+        <firebase-app auth-domain="blue-cats.firebaseapp.com"
+                      database-url="https://blue-cats.firebaseio.com/"
+                      api-key="AIzaSyAoh2kZvVKT4RSDPhnqxrtZSEiMoqSyqOc"></firebase-app>
+
 
         <app-location route="{{route}}"></app-location>
         <app-route
