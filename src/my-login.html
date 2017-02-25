@@ -1,0 +1,16 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../blue-cats-auth.html">
+<link rel="import" href="../bower_components/app-layout/app-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<dom-module id="my-login">
+    <template>
+        <firebase-app auth-domain="blue-cats.firebaseapp.com"
+                      database-url="https://blue-cats.firebaseio.com/"
+                      api-key="AIzaSyAoh2kZvVKT4RSDPhnqxrtZSEiMoqSyqOc"></firebase-app>
+        <blue-cats-auth></blue-cats-auth>
+    </template>
+    <script>Polymer({is:"my-login"});</script>
+
+</dom-module>
