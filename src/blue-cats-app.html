@@ -17,6 +17,8 @@
 
 <dom-module id="blue-cats-app">
     <template>
+
+
         <style>
             :host {
                 --app-primary-color: #4285f4;
@@ -61,11 +63,6 @@
 			}
         </style>
 
-        <firebase-app auth-domain="blue-cats.firebaseapp.com"
-                      database-url="https://blue-cats.firebaseio.com/"
-                      api-key="AIzaSyAoh2kZvVKT4RSDPhnqxrtZSEiMoqSyqOc"></firebase-app>
-
-
         <app-location route="{{route}}"></app-location>
         <app-route
                 route="{{route}}"
@@ -109,7 +106,6 @@
                     <my-login name="login"></my-login>
                     <my-calendar name="calendar"></my-calendar>
                     <my-events name="events"></my-events>
-                    
                     <my-campaign name="campaign"></my-campaign>
                     <my-view1 name="view1"></my-view1>
                     <my-view2 name="view2"></my-view2>
