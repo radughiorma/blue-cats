@@ -10,45 +10,64 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
-
-<link rel="import" href="../blue_cats_data/blue-cats-data.html"/>
+<link rel="import" href="../blue_cats_data/blue-cats-data.html" />
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
 
-<dom-module id="my-view3">
-  <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
 
-        padding: 10px;
-      }
-    </style>
+<dom-module id="my-addEvent"> <template> 
+<style include="shared-styles">
+:host {
+	display: block;
+	padding: 10px;
+}
+</style>
+<div id="myDataDiv">
+	<blue-cats-data id="myData"></blue-cats-data>
+</div>
 
-    <div class="card">
-      <div class="circle">3</div>
-      <h1>View Three</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-    </div>
-    
-    <paper-input label="Input label"></paper-input>
-    <paper-button id="add" on-tap="click">Click</paper-button>
-  </template>
+<div>
+	<!-- <paper-button id="add" on-tap="addEvent">Add Events</paper-button> -->
+	
+	<h2>Add new event :</h2>
 
-  <script>
+	<hr />
+
+	<paper-input label="Name" value="{{name}}" autofocus> </paper-input> 
+	<paper-textarea label="Description of event" value="{{description}}" rows="2"></paper-textarea>
+
+	<paper-button id="submit" on-tap="addSubmit">Add Event </paper-button>
+
+
+</div>
+</template> <script>
     Polymer({
-      is: 'my-view3',
-      
-      ready: function () {
-          console.log("ready");
-      },
+        is: 'my-addEvent',
+        properties: {
+        	name: { type: String},
+        	description: {type : String}
+        },
 
-      click: function () {
-        console.log("click");
-        //alert('wsx');
-      }
+        ready: function () {
+            console.log("ready");
+            this.name = '';
+            this.description='';
+        },
+
+        addEvent: function () {
+          console.log("addEvent");
+          this.$.myData._addEvent("first event", "25-02-2017");         
+          
+        },
+        
+        addSubmit: function(){
+        	console.log(this.name);
+        	console.log("addSubmit:" + ":" + this.name + ":" + this.description );
+        	this.$.myData._addEvent(this.name, this.description);  
+        
+        }
     });
-    
-    
-  </script>
-</dom-module>
+     
+  </script> 
+  </dom-module>
